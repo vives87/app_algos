@@ -2,6 +2,7 @@ import requests
 import json
 import logging
 import pandas as pd
+import os
 
 
 logger = logging.getLogger(__name__)
@@ -25,7 +26,7 @@ class APIBMEHandler:
     def __init__(self, market):
         self.url_base = 'https://miax-gateway-jog4ew3z3q-ew.a.run.app'
         self.competi = 'mia_7'
-        self.user_key = 'AIzaSyBfNJ1ZIVQrnngOX_csBmi-xTq0_u0uihM'
+        self.user_key = os.environ['API_KEY']
         self.market = market
     
     def get_ticker_master(self):
